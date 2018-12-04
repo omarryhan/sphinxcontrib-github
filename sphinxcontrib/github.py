@@ -12,7 +12,10 @@
 
 from __future__ import absolute_import, print_function, absolute_import
 
-from sphinx.util.compat import Directive
+try:
+    from sphinx.util.compat import Directive
+except ImportError:
+    from docutils.parsers.rst import Directive
 from docutils.parsers.rst import directives
 from docutils import nodes, utils
 from docutils.parsers.rst.roles import set_classes
